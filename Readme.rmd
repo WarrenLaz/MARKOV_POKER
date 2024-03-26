@@ -1,0 +1,2 @@
+Credits to : https://github.com/annaymj/Python-Code/blob/master/Poker.py
+Used code to simulate poker. Made changes to Constructor and other functions.
