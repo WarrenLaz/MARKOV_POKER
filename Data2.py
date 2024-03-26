@@ -1,9 +1,11 @@
 import pandas
 from Cards import Deck
 
-f = open("Record1.txt", 'r')
-ma = open("RecordMatrix.txt", "w")
+f = open("Record2.txt", 'r')
+ma = open("RecordMatrix2.txt", "w")
 data = []
+
+ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
 
 for line in f:
     t = []
@@ -19,17 +21,16 @@ d = Deck().deck
 m = []
 t = ['[\]']
 
-for x in d:
+for x in ranks:
     t.append(str(x))
 m.append(t)
 
-t = [' ' for _ in range(53)]
+t = [' ' for _ in range(14)]
 
-for x in d:
-    t = [' ' for _ in range(53)]
+for x in ranks:
+    t = [' ' for _ in range(14)]
     t[0] = str(x)
     m.append(t)
-
 
 for x in data:
     m[m[0].index(x[1])][m[0].index(x[2])] = str(x[-1])
