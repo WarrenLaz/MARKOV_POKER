@@ -27,7 +27,7 @@ def main ():
   for x in permd:
     hash = str(x[0][:-1]) + " " + str(x[1][:-1])
     wins[hash] = 0
-    for i in range(100):
+    for i in range(1000):
         game = Poker (8, Card( convert(x[0][:-1]), x[0][-1]) , Card( convert(x[1][:-1]) , x[1][-1]))
         game.play()
         if(game.Winner() == 1):

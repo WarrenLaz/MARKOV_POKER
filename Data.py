@@ -5,6 +5,7 @@ f = open("Record1.txt", 'r')
 ma = open("RecordMatrix.txt", "w")
 data = []
 
+f.readline()
 for line in f:
     t = []
     vector = line.split(" ")
@@ -36,7 +37,8 @@ for x in data:
 
 for x in m:
     for y in x:
-        ma.write(str(y) + "\t")
+            print(y)
+            ma.write(str(y) + "\t")
     ma.write("\n")
 
 ma.close()
