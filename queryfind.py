@@ -40,33 +40,29 @@ next(f)
 for x in f:
    r = x.split()
    cp[int(r[1])] = int(r[-1])
-
-allowance = 100
 #all cards
 gameslist = []
-gamenum = [i for i in range(1000)]
+gamenum = [i for i in range(20)]
 #for x in range (100):
-for i in range(10):
+for i in range(100):
     games = []
-    for i in range(1000):
-              bet = allowance/2
-              pot = bet*8
+    allowance = 100
+    for i in range(20):
               x = random.choice(permd)
               xhash = hashcard(x)
-              print(x, hashcard(x))
-              if(cp[xhash] > 20):
-                bet = bet * (cp[xhash] * 0.01)
+              bet = allowance*(0.001*cp[xhash])
+              if(cp[xhash] > 0):
+                bet = bet #* (cp[xhash] * 0.01)
                 game = Poker (8, Card( convert(x[0][:-1]), x[0][-1]) , Card( convert(x[1][:-1]) , x[1][-1]))
                 game.play()
 
                 if(game.Winner() == 1):
-                    allowance += bet
+                    allowance += bet*random.randint(2,8)
                 else: 
                     allowance -= bet
               games.append(allowance)
         #games.append(allowance)
     gameslist.append(games)
-    allowance = 100
 
 print('yourallowance: ' + str(allowance))
 
